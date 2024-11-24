@@ -5,11 +5,13 @@ import java.util.Iterator;
 public class FibonacciIterator implements Iterator<Integer> {
     private int quantity;
     private int i;
-    private int[] arr;
+    private int a;
+    private int b;
 
-    public FibonacciIterator(int quantity, int[] arr) {
+    public FibonacciIterator(int quantity) {
         this.quantity = quantity;
-        this.arr = arr;
+        a=0;
+        b=1;
     }
 
     @Override
@@ -19,7 +21,11 @@ public class FibonacciIterator implements Iterator<Integer> {
 
     @Override
     public Integer next() {
-        return arr[i++];
+        int c = a + b;
+        a = b;
+        b = c;
+        i++;
+        return a;
     }
 
 }

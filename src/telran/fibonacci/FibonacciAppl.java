@@ -11,12 +11,10 @@ public class FibonacciAppl {
         // print all numbers, and reduce sum
         // 1,1,2,3,5,8,13,21
         // sum = 54
-        Iterator<Integer> iterator = fibonacci.iterator();
         long sum = 0;
-        while (iterator.hasNext()) {
-            int f = iterator.next();
-            sum += f;
+        for (Integer f : fibonacci) {
             System.out.println(f);
+            sum += f;
         }
         System.out.println("Summa=" + sum);
     }
